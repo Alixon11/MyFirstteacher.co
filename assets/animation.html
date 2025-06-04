@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Drawing</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        svg {
+            width: 400px;
+            height: 400px;
+        }
+
+        path, line {
+            fill: none;
+            stroke: black;
+            stroke-width: 2;
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: draw 10s linear forwards;
+        }
+
+        text {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 3s forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <svg viewBox="0 0 200 200">
+        <!-- Здания -->
+        <path d="M20 150 V80 H40 V150" />
+        <path d="M50 150 V60 H70 V150" />
+        <path d="M80 150 V40 H100 V150" />
+        <path d="M110 150 V90 H130 V150" />
+
+        <!-- Черта под зданиями -->
+        <line x1="10" y1="150" x2="140" y2="150" />
+
+        <!-- Текст "IMAMOV" справа -->
+        <text x="150" y="100">IMAMOV</text>
+    </svg>
+
+</body>
+</html>

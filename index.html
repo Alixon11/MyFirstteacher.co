@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAMOV ARCHITECTS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    
+    
+</head>
+
+<body>
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+      </button>
+    
+      <div class="chatbot-popup">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+          <div class="header-info">
+            <img class="chatbot-logo" src="robotic.png" alt="Chatbot Logo" width="50" height="50">
+            </img>
+            <h2 class="logo-text">Chatbot</h2>
+          </div>
+          <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        </div>
+    
+        <!-- Chatbot Body -->
+        <div class="chat-body">
+          <div class="message bot-message">
+            <img class="bot-avatar" src="robotic.png" alt="Chatbot Logo" width="50" height="50">
+            </img>
+            <!-- prettier-ignore -->
+            <div class="message-text"> Hey there  <br /> How can I help you today? </div>
+          </div>
+        </div>
+    
+        <!-- Chatbot Footer -->
+        <div class="chat-footer">
+          <form action="#" class="chat-form">
+            <textarea placeholder="Message..." class="message-input" required></textarea>
+            <div class="chat-controls">
+              <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+              <div class="file-upload-wrapper">
+                <input type="file" accept="image/*" id="file-input" hidden />
+                <img src="#" />
+                <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+              </div>
+              <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <!-- Linking Emoji Mart script for emoji picker -->
+      <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+    
+      <!-- Linking custom script -->
+      <script src="aichat.js"></script>
+
+    <nav id="homee" class="navbar">
+        <div class="logo"><img src="IMG_6378.PNG" width="100px" height="100px" alt=""></div>
+        <ul class="nav-links">
+           <a class="home" href="#homee"><li><p class="home">Дом</p></li></a> 
+           <a class="projects" href="#projectss"><li><p  class="projects">Проекты</p></li></a>
+            <a class="about" href="#aboutt"><li><p class="about">О нас</p></li></a>
+            <a class="contact" href="#contactt"><li><p class="contact">Контакт</p></li></a>
+        </ul>
+        <div class="lang-switch">
+            <button id="lang-btn">RU</button>
+        </div>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="#" class="home">Home</a>
+        <a href="#" class="projects">Projects</a>
+        <a href="#" class="about">About</a>
+        <a href="#" class="contact">Contact</a>
+    </div>
+
+    <div class="background">
+        <h1 class="back">Дизайн интерьера от эскиза <br> до реализации</h1>
+        <h2 class="bac">Дизайн интерьеров для дома и бизнеса любой сложности. Получите <br> консультацию уже сегодня</h2>
+        <button id="openModal" class="consultation-btn">получить консультацию</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="txtbtn">Получить консультацию</h2>
+        <p class="txt">Оставьте свои контактные данные, и мы с вами свяжемся.</p>
+    </div>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="htxt">Гарантируем точное <br> исполнение в срок</h1>
+            <p class="jtxt">Мы реализуем архитектурные и дизайнерские проекты любой сложности от <br> фундамента до закупки текстиля.</p>
+        </div>
+        <div class="project-categories">
+            <div class="category"
+                style="background-image: url('photo_2025-04-01_10-08-48.jpg');">
+                <a class="stxt" href="#">> Частные проекты</a>
+            </div> 
+            <div class="category"
+                style="background-image: url('photo_2025-04-01_10-08-44.jpg');">
+                <a class="dtxt" href="#">> horeca</a>
+            </div>
+            <div class="category"
+                style="background-image: url('IMG_8521.PNG');">
+                <a class="ftxt" href="#">> Архитектурные проекты </a>
+            </div>
+            <div class="category"
+                style="background-image: url('IMG_8527.PNG');">
+                <a class="gtxt" href="#">> Коммерчиские проекты</a>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="sidebar">
+            <h2 class="sidetxt">Как мы работаем</h2>
+            <ul>
+                <li class="sitxt">Этапы работы по</li>
+                <li class="sdtxt">созданию дизайна</li>
+                <li class="setxt">интерьера</li>
+            </ul>
+        </div>
+        <div class="timeline">
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="dotxt">Консультация</h3>
+                <p class="dostxt">Мы обсуждаем ваши предпочтения, стиль и функциональные требования к будущему интерьеру. Анализируем пространство и подбираем концепцию, соответствующую вашим ожиданиям.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="steptxt">Оформление договора</h3>
+                <p class="stetxt">После согласования концепции подписываем договор, фиксируя все детали проекта, сроки выполнения и стоимость. Вы получаете полную прозрачность процесса.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="stttxt">Разработка планировки</h3>
+                <p class="stestxt">Мы создаём функциональную планировку, учитывая эргономику, зонирование и удобство. Вы получаете несколько вариантов расстановки мебели и организации пространства.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="sttptxt">Разработка дизайна</h3>
+                <p class="sttpptxt">На этом этапе создаётся концепция дизайна, подбираются цветовые решения, материалы, текстуры, освещение и декоративные элементы, формируя стиль будущего интерьера.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="dosptxt">3D-визуализация</h3>
+                <p class="dosdtxt">Мы создаём реалистичные 3D-визуализации интерьера, чтобы вы могли увидеть, как будет выглядеть ваше пространство после реализации проекта.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3 class="stoptxt">Ремонтно-отделочные работы</h3>
+                <p class="stotxt">Мы проводим по созданному дизайну ремонтно-отделочные работы. Воплощаем дизайн в реальность – выполняем ремонтно-отделочные работы качественно, в срок и по проекту. Гарантируем стиль, надежность и комфорт!</p>
+            </div>
+        </div>
+    </div>
+    <div class="pro">
+        <div class="pto">
+            <h2 class="ptotxt">Мы предоставляем 
+                Полный спектр услуг: от фундамента до декора</h2>
+        </div>
+    </div>
+    <div class="cr">
+        <img class="ct" src="/298c475c42ba89b4e1e4c2c5f4f87ddb.png" alt="">
+        <div class="soz">
+            <h2 class="soztxt">АРХИТЕКТУРА 
+                 И СТРОИТЕЛЬСТВО</h2>
+            <p class="sotxt">Занимаемся проектированием и <br> реализацией архитектурных проектов.</p>
+        </div>
+    </div>
+
+    <div class="cr">
+        <img class="ct" src="/7db6c70641766bc6aa4949fa14b5515f.png" alt="">
+        <div class="soz">
+            <h2 class="sobtxt">ДИЗАЙН ИНТЕРЬЕРА</h2>
+            <p class="futtxt">Мы разрабатываем дизайн-проекты для <br> коммерческих и частных объектов с <br> полной реализацией.</p>
+        </div>
+    </div>
+
+    <div class="cr">
+        <img class="ct" src="/9cd511a2e9d193f01da4abbf62f814ae.png" alt="">
+        <div class="soz">
+            <h2 class="avtortxt">АВТОРСКИЙ НАДЗОР</h2>
+            <p class="avtotxt">Полное сопровождение проекта - выезды <br> на стройку и фотоотчеты каждую неделю.</p>
+        </div>
+    </div>
+
+    <div class="cr">
+        <img class="ct" src="/3e0c2a1a594b06d2eb0bfb5e50541da3.png" alt="">
+        <div class="soz">
+            <h2 class="vizual">3D-ВИЗУАЛИЗАЦИЯ</h2>
+            <p class="vizua">Это возможность увидеть, как будет <br> выглядеть интерьер с тем или иным <br> стилем, материалом отделки, мебели, <br> декора и источником света.</p>
+        </div>
+    </div>
+
+    <div class="cr">
+        <img class="ct" src="/96566402d520e3b1033e88a5db6b35b9.png" alt="">
+        <div class="soz">
+            <h2 class="online">ОНЛАЙН-ОТЧЕТ
+                ДЛЯ НАШИХ КЛИЕНТОВ</h2>
+            <p class="onlin">Для полной прозрачности и удобства мы <br> разработали систему онлайн-отчетности, <br> где вы сможете увидеть информацию по <br> срокам и расходам.</p>
+            <button class="login">Войти в личный кабинет</button>
+        </div>
+    </div>
+
+
+
+
+    <section id="aboutt" class="section">
+        <div class="left">
+            <h5 class="lefttxt">Мы Гарантируем </h5>
+            <h1 class="leftxt">Лучшее работы и даем в срок </h1>
+        </div>
+        <div class="right">
+            <p class="righttxt">Мы лучшие Архитектурных компаний в ташкенте вы можете доверится</p>
+            <a  href="https://t.me/Imamovarchitects" class="btn"> Написать в телегграм</a>
+        </div>
+    </section>
+
+<h2 class="proj">Наши проекты</h2>
+
+<div id="projectss" class="xam">
+<div class="dis">
+<div class="pr">
+    <img class="proim" src="Niyozbek yuli classic- fin c-17 a(1).jpg" alt="">
+    <h2>Wiston</h2>
+    <div class="line"></div>
+    <p class="mir">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид.</p>
+</div>
+
+<div class="proje">
+    <img class="proim" src="Termiz c-34 night-b logo~1(1).jpg" alt="">
+    <h2>Golden Plaza</h2>
+    <div class="line"></div>
+    <p class="mir mir2">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид. </p>
+</div>
+
+<div class="proje">
+    <img class="proim" src="C-11 night-2 a.jpg" alt="">
+    <h2>Sharq</h2>
+    <div class="line"></div>
+    <p class="mir mir3">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид. </p>
+</div>
+
+
+</div>
+<div class="dip">
+<div class="proje">
+    <img class="proim" src="Qorasu photo c-1 hic-2a.png" alt="">
+    <h2>Qorasuv</h2>
+    <div class="line"></div>
+    <p class="mir mir4">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид.</p>
+</div>
+
+<div class="proje">
+    <img class="proim" src="Oq saroy cam-17-1d.jpg" alt="">
+    <h2>Oq saroy</h2>
+    <div class="line"></div>
+    <p class="mir mir5">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид. </p>
+</div>
+
+<div class="proje">
+    <img class="proim" src="c-48a.jpg" alt="">
+    <h2>Saroy House</h2>
+    <div class="line"></div>
+    <p class="mir mir6">Жилой комплекс «Ак Сарай»  в Мирзо Улугбекском районе 
+        Спроектировано и построено ООО «Городской Строй». 
+        Это восьмиэтажное здание из 11 блоков. 
+        стал уникальным и современным архитектурным решением.
+        Светлый  фасад здания, 
+        элегантные декоративные элементы,  резные перила балконов здания 
+        придает величественный вид. </p>
+</div>
+</div>
+</div>
+<p class="port">> в портфолио</p>
+
+
+
+    
+    <div id="contactt" class="cop">
+        <h1 class="coptxt">Свяжитесь с нами</h1>
+        <p class="cotxt">Заполните форму, чтобы связаться с нами.</p>
+
+       
+        <div class="contact-box">
+           
+            <div class="cop-left">
+                <h3 class="copltxt">Заполните форму</h3>
+             
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="label">Имя</label>
+                            <input class="emal" type="text" id="name" placeholder="Enter your Name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="labe">Номер</label>
+                            <input class="emal" type="text" id="phone" placeholder="+998 996023215" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label class="la">Эллектроная почта</label>
+                            <input class="emal" type="email" id="email" placeholder="youremail@gmail.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="l">Предмет</label>
+                            <input class="emal" type="text" id="subject" placeholder="Inquiry">
+                        </div>                       
+                    </div>
+                    <label class="le">Сообщение</label>
+                    <textarea rows="10" id="message" placeholder="Enter your Message" required></textarea>
+                    <button class="sub" type="submit">ОТПРАВИТЬ СООБЩЕНИЕ</button>
+                </form>
+            </div>
+            
+            <div class="cop-right">
+                <h3 class="copritxt">
+                    Свяжитесь с нами</h3>
+                <table>
+                    <tr>
+                        <td class="sdf">Эллектроная почта: </td>
+                        <td class="asd">imamovarchitecture@gmail.com</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ghj">Номер: </td>
+                        <td class="kjh">+998 954406060</td>
+                    </tr>
+
+                    <tr>
+                        <td class="qwe">Адресс: </td>
+                        <td class="ewq">Ozod kochasi<br>
+                           
+                            Tahkent - 10002, Uzbekistan</td>
+                    </tr>
+                </table>
+                
+              
+                <div class="map">
+                   
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2888210618585!2d77.09131724016883!3d28.621104670527558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04afb8dbcfe1%3A0xaff19e718be2136b!2sMaharaja%20Surajmal%20Institute%20Of%20Technology!5e0!3m2!1sen!2sin!4v1711214006526!5m2!1sen!2sin" width="800" height="275" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+        
+            <div class="footer-about">
+                <h2 class="tyu">Imamov Architects</h2>
+                <p class="uyt">Imamov Architects занимается разработкой инновационных, устойчивых и неподвластных времени архитектурных решений. Благодаря страсти к творчеству и функциональности мы превращаем идеи в реальность, реализуя высококачественные проекты, соответствующие потребностям наших клиентов.</p>
+            </div>
+    
+           
+            <div class="footer-links">
+                <h3 class="zxc">Быстрые ссылки</h3>
+                <a class="dfg" href="#">About Us</a>
+                <a class="dfh" href="#">Our Services</a>
+                <a class="dfk" href="#">Projects</a>
+                <a class="dfa" href="#">Careers</a>
+                <a class="dfq" href="#">Contact</a>
+            </div>
+    
+            
+            <div class="footer-contact">
+                <h3 class="jkl">Contact Us</h3>
+                <p class="lkj">Phone: +998 (95) 440-60-60 </p>
+                <p class="iop">Email: <a href="mailto:imamovarch@gmail.com">info@imamovarchitects.com</a></p>
+                <p class="ios">улица Озод Дом 21, 100002, Тоshkent, Toshkent, Uzbekistan</p>
+            </div>
+    
+           
+            <div class="footer-social">
+                <h3 class="ahjk">Follow Us</h3>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/888888/facebook.png" alt="Facebook" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/888888/instagram-new.png" alt="Instagram" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/888888/twitter.png" alt="Twitter" /></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/888888/linkedin.png" alt="LinkedIn" /></a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Imamov Architects. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- JavaScript file -->
+    <script src="map.js"></script>
+
+
+    <script src="script.js"></script>
+    <script src="aichat.js"></script>
+</body>
+
+</html>

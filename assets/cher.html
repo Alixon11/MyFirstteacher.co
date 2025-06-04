@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Work</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 50px;
+        }
+        .sidebar {
+            width: 25%;
+            padding-right: 20px;
+        }
+        .sidebar h2 {
+            border-left: 4px solid orange;
+            padding-left: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+            font-weight: bold;
+            color: gray;
+        }
+        .timeline {
+            width: 75%;
+            border-left: 2px solid orange;
+            padding-left: 20px;
+            position: relative;
+        }
+        .step {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .dot {
+            width: 15px;
+            height: 15px;
+            background-color: orange;
+            border-radius: 50%;
+            position: absolute;
+            left: -30px;
+            top: 5px;
+        }
+        h3 {
+            color: white;
+        }
+        p {
+            color: gray;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>How we work</h2>
+            <ul>
+                <li>STAGES OF WORK ON</li>
+                <li>CREATING AN INTERIOR</li>
+                <li>DESIGN</li>
+            </ul>
+        </div>
+        <div class="timeline">
+            <div class="step">
+                <div class="dot"></div>
+                <h3>Consultation</h3>
+                <p>We discuss your preferences, style and functional requirements for the future interior...</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3>Execution of the contract</h3>
+                <p>After agreeing on the concept, we sign a contract, fixing all the details...</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3>Development of the layout</h3>
+                <p>We create a functional layout, taking into account ergonomics, zoning and convenience...</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3>Design development</h3>
+                <p>At this stage, a design concept is created, color solutions, materials, textures...</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3>3D visualization</h3>
+                <p>We create realistic 3D interior visualizations so you can see what your space...</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <h3>Repair and finishing works</h3>
+                <p>We carry out repair and finishing works according to the created design...</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

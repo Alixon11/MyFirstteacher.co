@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAMOV ARCHITECTS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            overflow: hidden;
+            background: black;
+        }
+
+        /* Загрузочный экран */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10000;
+            animation: slideIn 0.8s ease forwards;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .loading-text:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .loading-text:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                top: -100vh;
+            }
+            100% {
+                top: 0;
+            }
+        }
+
+        @keyframes slideOut {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: -100vh;
+            }
+        }
+
+        /* Скрытие экрана после анимации */
+        .hide {
+            animation: slideOut 1s ease forwards;
+        }
+
+        .background {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('/il_fullxfull.3989472864_8ytu.webp');
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            overflow: hidden;
+            background: black;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .lang-switch button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .background {
+            background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/il_fullxfull.3989472864_8ytu.webp');
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .typing-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            display: flex;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(0);
+            transition: transform 0.15s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .shake {
+            animation: shake 0.2s ease-in-out;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .typing-container {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: -100vh;
+                right: 0;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: top 0.5s ease-in-out;
+            }
+
+            .nav-links.active {
+                top: 60px;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+
+        .consultation-btn {
+            position: absolute ;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 400px;
+            max-width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            z-index: 1500px;
+        }
+
+        .modal.active {
+            right: 0;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .modal input, .modal textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            background: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .modal {
+                width: 100%;
+                padding: 15px;
+            }
+            .consultation-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .modal h2 {
+                font-size: 20px;
+            }
+            .modal input, .modal textarea {
+                font-size: 14px;
+            }
+            .submit-btn {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Загрузочный экран -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">IMAMOV</div>
+        <div class="loading-text">ARCHITECTS</div>
+        <div class="loading-text">LONDON</div>
+    </div>
+    <nav class="navbar">
+        <div class="logo">LOGO</div>
+        <ul class="nav-links">
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#" class="projects">Projects</a></li>
+            <li><a href="#" class="about">About</a></li>
+            <li><a href="#" class="contact">Contact</a></li>
+        </ul>
+        <div class="lang-switch">
+            <button id="lang-btn">EN</button>
+        </div>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <div class="background">
+        <button class="consultation-btn" onclick="openModal()">Maslahat oling</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.getElementById("loadingScreen").classList.add("hide");
+            }, 2000); // 1 секунда на текст + 1 секунда ожидания
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const burger = document.querySelector(".burger");
+            const navLinks = document.querySelector(".nav-links");
+
+            burger.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+                burger.classList.toggle("toggle");
+            });
+        });
+
+        document.getElementById('lang-btn').addEventListener('click', function () {
+            let btn = document.getElementById('lang-btn');
+            if (btn.innerText === 'EN') {
+                btn.innerText = 'RU';
+                document.querySelector('.home').innerText = 'Главная';
+                document.querySelector('.projects').innerText = 'Проекты';
+                document.querySelector('.about').innerText = 'О нас';
+                document.querySelector('.contact').innerText = 'Контакты';
+            } else {
+                btn.innerText = 'EN';
+                document.querySelector('.home').innerText = 'Home';
+                document.querySelector('.projects').innerText = 'Projects';
+                document.querySelector('.about').innerText = 'About';
+                document.querySelector('.contact').innerText = 'Contact';
+            }
+        });
+
+        function openModal() {
+    document.getElementById("modal").classList.add("active");
+    document.querySelector(".consultation-btn").classList.add("hidden");
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("active");
+    document.querySelector(".consultation-btn").classList.remove("hidden");
+}
+    </script>
+
+</body>
+</html>

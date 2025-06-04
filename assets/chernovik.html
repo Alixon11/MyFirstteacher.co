@@ -1,0 +1,148 @@
+<div class="body">
+    <form class="form" method="get" id="advanced-searchform-header" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+      <strong>
+        <p>Filtrar Por Veículo:</p>
+      </strong>
+      <div class="section">
+        <div class="control-group">
+          <select name='pa_marca' id='pa_marca'>
+            <option value="" disabled selected>Marca/Montadora</option>
+            <?php foreach($marcaMontadora as $row) {
+                                        echo '<option value='.$row->slug.'>'.$row->name.'</option>';
+                             }?>
+          </select>
+        </div>
+      </div>
+      <div class="section">
+        <div class="control-group">
+          <select name='pa_veiculo' id='pa_veiculo'>
+            <option value="" disabled selected>Veículo</option>
+            <?php foreach($veiculo as $row) {
+                                       echo '<option value='.$row->slug.'>'.$row->name.'</option>';
+                                }?>
+          </select>
+        </div>
+      </div>
+      <div class="section">
+        <div class="control-group">
+          <select name='pa_ano' id='pa_ano'>
+            <option value="" disabled selected>Ano</option>
+            <?php foreach($ano as $row) {
+                                       echo '<option value='.$row->slug.'>'.$row->name.'</option>';
+                                }?>
+          </select>
+        </div>
+      </div>
+      <div class="section-button">
+        <div class="control-group">
+          <button type='submit'>Filtrar</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+    <style>@media (max-width:768px){
+        .body{
+        padding:0 10px !important;
+        background-color: #f4f4f4;
+      }
+        form{
+          display:flex;
+          flex-direction:column!important;
+          }
+        .section-button .control-group button {
+            background: #eb672f;
+            border-radius: 2px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.5s;
+            padding: 10px 40px;
+            width:100%;
+            margin: 10px 0!important;
+        }
+        .form strong{
+            font-size: 18px !important;
+            text-align: center;
+            display: block;
+            color: #333;
+        }
+          
+        .form .section {
+          flex-grow: 1;
+          flex-direction: column;
+          padding: 0 5px!important;
+        }
+      
+        .form .section .control-group {
+            margin:5px 0!important;
+            background-color: #fff;
+            padding: 6px 15px;
+            position: relative;
+            display: block;
+        }
+      
+        .form .section .control-group select{
+            width: 100%;
+            height: 24px;
+            font-size: 14px;
+            color: #000;
+            border: 0;
+            border-bottom: 1px solid #fff;
+        }
+        .form .input-block button:hover{        
+            background: #000; 
+        } 
+      }
+      form{
+        display:flex;
+        flex-direction:row;
+        background-color: #f4f4f4;
+        color: #fff;
+      }
+      .form strong{
+          margin:10px;
+          font-size: 22px;
+          text-align: center;
+          display: block;
+          color: #333;
+      }
+      .form .section {
+        flex-grow: 1;
+        padding: 10px;
+      }
+      
+      .form .section .control-group {
+          margin: 10px 0;
+          background-color: #fff;
+          padding: 6px 15px;
+          position: relative;
+          display: block;
+      }
+      
+      .form .section .control-group select{
+          width: 100%;
+          height: 32px;
+          font-size: 14px;
+          color: #000;
+          border: 0;
+          border-bottom: 1px solid #fff;
+      }
+      
+      .form .section-button .control-group button {
+          background: #eb672f;
+          border-radius: 2px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+          cursor: pointer;
+          transition: background 0.5s;
+          padding: 10px 40px;
+          border: 0;
+          margin: 20px 10px 10px 10px;
+      }
+      
+      .form .input-block button:hover{        
+          background: #000; 
+      } </style>
